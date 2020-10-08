@@ -5,33 +5,44 @@ from bin_media import bin_media
 from bin_mediana import bin_mediana
 
 
-"Complejidad de V"
-for dirpath,dirname, files in os.walk('./maximos'):
-    for archivo in files:
-        if ('V' in archivo):
-            maximos = np.loadtxt(dirpath+'/'+archivo)
-            binarios_media = bin_media(maximos)
-            binarios_mediana = bin_mediana(maximos)
-            print(archivo)
-            print("Complejidad media: ",complejidad(binarios_media))
-            print("Complejidad mediana: ",complejidad(binarios_mediana))
-            del(maximos)
-            del(binarios_media)
-            del(binarios_mediana)
 
-"Complejidad de t"
-for dirpath,dirname, files in os.walk('./maximos'):
+
+resultados_Complejidad = "Nombre del Archivo;Longitud de la cadena;Media;Complejidad_Media(c,c/b);Mediana;Complejidad_Mediana(c,c/b) \n"
+for dirpath,dirname, files in os.walk('./maximos_DATA_20190307-0003_4_10Millones.bin-20201008T145227Z-001/Nobinarizados'):
     for archivo in files:
+        "Carga la serie de maximos de un archivo"
+        maximos = np.loadtxt(dirpath+'/'+archivo)
+        "Si estoy con el t de los maximos tengo que calcular la diferencia temporal"
         if ('t' in archivo):
-            maximos_temp = np.loadtxt(dirpath+'/'+archivo)
             def_temp = []
-            for i in range(1,len(maximos_temp)):
-                def_temp.append(maximos_temp[i]-maximos_temp[i-1])
-            binarios_media = bin_media(def_temp)
-            binarios_mediana = bin_mediana(def_temp)
-            print(archivo)
-            print("Complejidad media: ",complejidad(binarios_media))
-            print("Complejidad mediana: ",complejidad(binarios_mediana))
-            del(maximos_temp)
+            for i in range(1,len(maximos)):
+                def_temp.append(maximos[i]-maximos[i-1])
+            maximos = def_temp[:]
             del(def_temp)
-            del(binarios_media)
+        "Biniriza la serie"
+        binarios_media,media = bin_media(maximos)
+        binarios_mediana,mediana = bin_mediana(maximos)
+        archivo = archivo.replace(".bin", "") 
+        "Guarda las serie binarizadas"
+        output_file = open(f'maximos_DATA_20190307-0003_4_10Millones.bin-20201008T145227Z-001/binarizados/{archivo}_media_{len(binarios_media)}.bin', 'w')
+        stingbin = ''.join([str(num) for num in binarios_media])
+        output_file.write(stingbin)
+        output_file.close()
+        output_file = open(f'maximos_DATA_20190307-0003_4_10Millones.bin-20201008T145227Z-001/binarizados/{archivo}_mediana{len(binarios_mediana)}.bin', 'w')
+        stingbin = ''.join([str(num) for num in binarios_mediana])
+        output_file.write(stingbin)
+        output_file.close()
+        "Calcula la complejidad"
+        complejidad_media = complejidad(binarios_media)
+        complejidad_mediana = complejidad(binarios_mediana)
+        "Guarda los resultados en la string"
+        resultados_Complejidad += f"{archivo};{len(binarios_media)};{media};{str(complejidad_media)};{mediana};{str(complejidad_mediana)}\n"
+        "Elimina las variables que ya no usamos por cuestiones de espacio"
+        del(maximos)
+        del(binarios_media)
+        del(binarios_mediana)
+
+
+output_file = open('maximos_DATA_20190307-0003_4_10Millones.bin-20201008T145227Z-001/Resultados3.txt', 'w')
+output_file.write(resultados_Complejidad)
+output_file.close()

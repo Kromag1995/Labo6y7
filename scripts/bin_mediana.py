@@ -7,4 +7,4 @@ def bin_mediana(s):
             serie_bin_mediana.append(1)
         else:
             serie_bin_mediana.append(0)             
-    return serie_bin_mediana
+    return serie_bin_mediana,mediana

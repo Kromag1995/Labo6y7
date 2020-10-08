@@ -7,4 +7,4 @@ def bin_media(s):
             serie_bin_media.append(1)
         else:
             serie_bin_media.append(0)             
-    return serie_bin_media
+    return serie_bin_media,media

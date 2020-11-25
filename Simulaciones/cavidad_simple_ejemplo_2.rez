@@ -1,0 +1,211 @@
+{
+    "builtin_params": {
+        "lambda": {
+            "unit": "nm",
+            "value": 1064
+        }
+    },
+    "custom_params": {
+    },
+    "elements": [
+        {
+            "is_disabled": false,
+            "label": "M1",
+            "layout_draw_narrow": false,
+            "layout_show_label": true,
+            "params": {
+                "Alpha": {
+                    "unit": "deg",
+                    "value": 0
+                },
+                "R": {
+                    "unit": "mm",
+                    "value": 250
+                }
+            },
+            "title": "",
+            "type": "ElemCurveMirror"
+        },
+        {
+            "is_disabled": false,
+            "label": "d1",
+            "layout_draw_narrow": false,
+            "layout_show_label": true,
+            "params": {
+                "L": {
+                    "unit": "mm",
+                    "value": 2000
+                },
+                "n": {
+                    "unit": "none",
+                    "value": 1
+                }
+            },
+            "title": "",
+            "type": "ElemEmptyRange"
+        },
+        {
+            "is_disabled": false,
+            "label": "M2",
+            "layout_draw_narrow": false,
+            "layout_show_label": true,
+            "params": {
+                "Alpha": {
+                    "unit": "deg",
+                    "value": 0
+                },
+                "R": {
+                    "unit": "mm",
+                    "value": 250
+                }
+            },
+            "title": "",
+            "type": "ElemCurveMirror"
+        }
+    ],
+    "formulas": [
+    ],
+    "notes": "",
+    "param_links": [
+    ],
+    "pumps": [
+    ],
+    "schema_version": "2.0",
+    "title": "",
+    "trip_type": "SW",
+    "windows": [
+        {
+            "function": {
+                "arg": {
+                    "element_index": 1,
+                    "param": "L",
+                    "range": {
+                        "points": 100,
+                        "start": {
+                            "unit": "mm",
+                            "value": 1
+                        },
+                        "step": {
+                            "unit": "mm",
+                            "value": 0
+                        },
+                        "stop": {
+                            "unit": "mm",
+                            "value": 3000
+                        },
+                        "use_step": false
+                    }
+                },
+                "stab_calc_mode": "Normal"
+            },
+            "type": "StabMap",
+            "window": {
+                "cursor_enabled": true,
+                "cursor_mode": "Both",
+                "stab_bound_markers": true,
+                "stored_views": [
+                ],
+                "ts_flipped": false,
+                "ts_mode": "T+S",
+                "x_max": 3029.99,
+                "x_min": -28.990000000000002,
+                "x_unit": "mm",
+                "y_max": 253.09992910421386,
+                "y_min": -13.09851118849097,
+                "y_unit": "none"
+            }
+        },
+        {
+            "function": {
+                "arg_x": {
+                    "element_index": 1,
+                    "param": "L",
+                    "range": {
+                        "points": 1000,
+                        "start": {
+                            "unit": "mm",
+                            "value": 0
+                        },
+                        "step": {
+                            "unit": "mm",
+                            "value": 0
+                        },
+                        "stop": {
+                            "unit": "mm",
+                            "value": 3000
+                        },
+                        "use_step": false
+                    }
+                },
+                "arg_y": {
+                    "element_index": 0,
+                    "param": "R",
+                    "range": {
+                        "points": 1000,
+                        "start": {
+                            "unit": "mm",
+                            "value": 0
+                        },
+                        "step": {
+                            "unit": "mm",
+                            "value": 0
+                        },
+                        "stop": {
+                            "unit": "mm",
+                            "value": 300
+                        },
+                        "use_step": false
+                    }
+                },
+                "stab_calc_mode": "Squared"
+            },
+            "type": "StabMap2D",
+            "window": {
+                "aux_stored_views": [
+                    {
+                        "mode": 0,
+                        "z_max": 1.05,
+                        "z_min": -1.05
+                    },
+                    {
+                        "mode": 1,
+                        "z_max": 1.05,
+                        "z_min": -0.05
+                    }
+                ],
+                "cursor_enabled": true,
+                "cursor_mode": "Both",
+                "stored_views": [
+                    {
+                        "mode": 0,
+                        "x_max": 3000,
+                        "x_min": 0,
+                        "x_unit": "mm",
+                        "y_max": 300,
+                        "y_min": 0,
+                        "y_unit": "mm"
+                    },
+                    {
+                        "mode": 1,
+                        "x_max": 3000,
+                        "x_min": 0,
+                        "x_unit": "mm",
+                        "y_max": 300,
+                        "y_min": 0,
+                        "y_unit": "mm"
+                    }
+                ],
+                "ts_flipped": false,
+                "ts_mode": "T",
+                "x_max": 3000,
+                "x_min": 0,
+                "x_unit": "mm",
+                "y_max": 300,
+                "y_min": 0,
+                "y_unit": "mm",
+                "z_max": 1.05,
+                "z_min": -0.05
+            }
+        }
+    ]
+}

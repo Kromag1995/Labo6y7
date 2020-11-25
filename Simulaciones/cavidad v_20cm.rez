@@ -1,0 +1,272 @@
+{
+    "builtin_params": {
+        "lambda": {
+            "unit": "nm",
+            "value": 1064
+        }
+    },
+    "custom_params": {
+    },
+    "elements": [
+        {
+            "is_disabled": false,
+            "label": "M1",
+            "layout_draw_narrow": false,
+            "layout_show_label": true,
+            "params": {
+            },
+            "title": "",
+            "type": "ElemFlatMirror"
+        },
+        {
+            "is_disabled": false,
+            "label": "G1",
+            "layout_draw_narrow": false,
+            "layout_show_label": true,
+            "params": {
+                "L": {
+                    "unit": "mm",
+                    "value": 2
+                },
+                "n": {
+                    "unit": "none",
+                    "value": 1.958
+                }
+            },
+            "title": "",
+            "type": "ElemPlate"
+        },
+        {
+            "is_disabled": false,
+            "label": "d1",
+            "layout_draw_narrow": false,
+            "layout_show_label": true,
+            "params": {
+                "L": {
+                    "unit": "mm",
+                    "value": 160
+                },
+                "n": {
+                    "unit": "none",
+                    "value": 1
+                }
+            },
+            "title": "",
+            "type": "ElemEmptyRange"
+        },
+        {
+            "is_disabled": false,
+            "label": "M2",
+            "layout_draw_narrow": false,
+            "layout_show_label": true,
+            "params": {
+                "Alpha": {
+                    "unit": "deg",
+                    "value": 17
+                },
+                "R": {
+                    "unit": "mm",
+                    "value": 250
+                }
+            },
+            "title": "",
+            "type": "ElemCurveMirror"
+        },
+        {
+            "is_disabled": false,
+            "label": "d2",
+            "layout_draw_narrow": false,
+            "layout_show_label": true,
+            "params": {
+                "L": {
+                    "unit": "mm",
+                    "value": 100
+                },
+                "n": {
+                    "unit": "none",
+                    "value": 1
+                }
+            },
+            "title": "",
+            "type": "ElemEmptyRange"
+        },
+        {
+            "is_disabled": false,
+            "label": "M3",
+            "layout_draw_narrow": false,
+            "layout_show_label": true,
+            "params": {
+            },
+            "title": "",
+            "type": "ElemFlatMirror"
+        }
+    ],
+    "formulas": [
+    ],
+    "notes": "",
+    "param_links": [
+    ],
+    "pumps": [
+    ],
+    "schema_version": "2.0",
+    "title": "",
+    "trip_type": "SW",
+    "windows": [
+        {
+            "function": {
+                "arg_x": {
+                    "element_index": 4,
+                    "param": "L",
+                    "range": {
+                        "points": 1000,
+                        "start": {
+                            "unit": "mm",
+                            "value": 70
+                        },
+                        "step": {
+                            "unit": "mm",
+                            "value": 0
+                        },
+                        "stop": {
+                            "unit": "mm",
+                            "value": 800
+                        },
+                        "use_step": false
+                    }
+                },
+                "arg_y": {
+                    "element_index": 2,
+                    "param": "L",
+                    "range": {
+                        "points": 100,
+                        "start": {
+                            "unit": "mm",
+                            "value": 150
+                        },
+                        "step": {
+                            "unit": "mm",
+                            "value": 0
+                        },
+                        "stop": {
+                            "unit": "mm",
+                            "value": 250
+                        },
+                        "use_step": false
+                    }
+                },
+                "stab_calc_mode": "Squared"
+            },
+            "type": "StabMap2D",
+            "window": {
+                "aux_stored_views": [
+                ],
+                "cursor_enabled": true,
+                "cursor_mode": "Both",
+                "stored_views": [
+                ],
+                "ts_flipped": false,
+                "ts_mode": "S",
+                "x_max": 800,
+                "x_min": 70,
+                "x_unit": "mm",
+                "y_max": 250,
+                "y_min": 150,
+                "y_unit": "mm",
+                "z_max": 1.05,
+                "z_min": -0.05
+            }
+        },
+        {
+            "function": {
+                "arg_x": {
+                    "element_index": 4,
+                    "param": "L",
+                    "range": {
+                        "points": 1000,
+                        "start": {
+                            "unit": "mm",
+                            "value": 130
+                        },
+                        "step": {
+                            "unit": "mm",
+                            "value": 0
+                        },
+                        "stop": {
+                            "unit": "mm",
+                            "value": 460
+                        },
+                        "use_step": false
+                    }
+                },
+                "arg_y": {
+                    "element_index": 3,
+                    "param": "Alpha",
+                    "range": {
+                        "points": 100,
+                        "start": {
+                            "unit": "deg",
+                            "value": 17
+                        },
+                        "step": {
+                            "unit": "deg",
+                            "value": 0
+                        },
+                        "stop": {
+                            "unit": "deg",
+                            "value": 25
+                        },
+                        "use_step": false
+                    }
+                },
+                "stab_calc_mode": "Squared"
+            },
+            "type": "StabMap2D",
+            "window": {
+                "aux_stored_views": [
+                    {
+                        "mode": 0,
+                        "z_max": 1.05,
+                        "z_min": -1.05
+                    },
+                    {
+                        "mode": 1,
+                        "z_max": 1.05,
+                        "z_min": -0.05
+                    }
+                ],
+                "cursor_enabled": true,
+                "cursor_mode": "Both",
+                "stored_views": [
+                    {
+                        "mode": 0,
+                        "x_max": 280,
+                        "x_min": 120,
+                        "x_unit": "mm",
+                        "y_max": 25,
+                        "y_min": 14.999999999999998,
+                        "y_unit": "deg"
+                    },
+                    {
+                        "mode": 1,
+                        "x_max": 280,
+                        "x_min": 120,
+                        "x_unit": "mm",
+                        "y_max": 25,
+                        "y_min": 14.999999999999998,
+                        "y_unit": "deg"
+                    }
+                ],
+                "ts_flipped": false,
+                "ts_mode": "S",
+                "x_max": 460,
+                "x_min": 130,
+                "x_unit": "mm",
+                "y_max": 25,
+                "y_min": 17,
+                "y_unit": "deg",
+                "z_max": 1.05,
+                "z_min": -0.05
+            }
+        }
+    ]
+}
